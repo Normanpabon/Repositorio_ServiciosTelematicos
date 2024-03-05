@@ -1,0 +1,7 @@
+Los archivos de configuracion soporte de la practica se encuentran alojados en github, en la url:
+
+https://github.com/Normanpabon/Repositorio_ServiciosTelematicos/tree/main/Servicios/Parcial1_practico
+
+Igualmente, la vm configurada se subio a vagrant cloud, se puede encontrar en la url:
+
+https://app.vagrantup.com/normanpabon/boxes/parcial_practico_1
