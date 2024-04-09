@@ -1,0 +1,8 @@
+# Una vez modificados los archivos ejecutamos los siguientes comandos
+
+sudo systemctl enable systemd-resolved
+
+sudo systemctl start systemd-resolved
+
+#para verificar el estado del servicio
+sudo systemctl status systemd-resolved
