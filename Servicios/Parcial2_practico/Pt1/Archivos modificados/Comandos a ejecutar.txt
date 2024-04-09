@@ -1,4 +1,11 @@
+#Previo a modificar los archivos
+
+sudo apt install network-manager
+
+
 # Una vez modificados los archivos ejecutamos los siguientes comandos
+
+sudo systemctl restart NetworkManager
 
 sudo systemctl enable systemd-resolved
 
