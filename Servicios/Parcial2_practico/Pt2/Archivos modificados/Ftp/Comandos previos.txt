@@ -1,0 +1,3 @@
+# Antes de poder modificar los archivos, debemos instalar el gestor de fpt
+
+sudo apt install vsftpd
