@@ -61,9 +61,22 @@ Systemd es el conjunto de daemons para la administracion del sistema linux, este
 Con el podemos crear un servicio llamado 'Prometheus' y habilitar el inicio automatico de este, tambien podriamos configurarlo haciendo uso de crontab,
 sin embargo systemd nos genera logs de errores de la aplicacion y tiene otras ventajas no listadas aca.
 
-Para eso creamos el archivo "prometheus.service" en la ruta listada a continuacion
+Para eso creamos el archivo "prometheus.service" en la ruta listada a continuacion (el contenido de este archivo se puede referenciar del archivo en este repo con el mismo nombre).
 ```
 sudo nano /etc/systemd/system/prometheus.service
 ```
 
-el contenido de este archivo se puede referenciar del archivo en este repo con el mismo nombre.
+Una vez creado el servicio, debemos habilitarlo e iniciarlo. Al habilitarlo nos aseguramos que se inicie automaticamente.
+
+```
+sudo systemctl enable prometheus
+sudo systemctl start prometheus
+```
+
+podemos verificar el estado del servicio con systemctl
+```
+sudo systemctl status prometheus
+```
+
+## Acceder a interfaz de prometheus
+Para acceder a la interfaz de prometheus debemos acceder al puerto 9090 de nuestra maquina. tal que "http://IpServidorPrometheus:9090"

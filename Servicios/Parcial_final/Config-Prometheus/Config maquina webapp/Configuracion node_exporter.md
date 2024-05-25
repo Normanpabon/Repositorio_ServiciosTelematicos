@@ -40,3 +40,15 @@ escribimos lo siguiente, para finalizar guardando cambios.
 ```
 
 podemos verificar la ejecucion del node exporter en la direccion http://ipMaquina:9100
+
+## Creacion de servicio con systemd (Opcional)
+
+Si queremos en vez de usar crontab, crear un servicio para administrar el node_exporter.
+debemos crear un archivo llamado 'nodeExporter.service', el contenido para configurar el
+servicio de systemd se encuentra en el archivo con el mismo nombre que se encuentra en 
+este repo. (importante validar la linea 10 con el path donde se encuentra el 
+node_exporter)
+
+```
+sudo nano /etc/systemd/system/nodeExporter.service
+```

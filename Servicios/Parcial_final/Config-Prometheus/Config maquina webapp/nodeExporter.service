@@ -1,0 +1,13 @@
+[Unit]
+Description=Node_exporter_prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=ubuntu
+Group=sudo
+Type=simple
+ExecStart=/home/ubuntu/node_exporter-1.8.1.linux-amd64/node_exporter
+
+[Install]
+WantedBy=multi-user.target
