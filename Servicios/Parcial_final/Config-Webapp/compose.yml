@@ -1,0 +1,35 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    container_name: mysql_server_webapp_telematicos
+    #network_mode: "host"
+    ports:
+      - 3306:3306
+    
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./init.sql:/data/application/init.sql
+    
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 0    
+
+
+  web:
+    image: python:3.8
+    container_name: web_app_python_flask
+    restart: always
+
+    network_mode: "host"
+    #ports:
+     # - 80:5000
+
+    volumes:
+      - ./webapp:/var/webapp/
+
+    working_dir: /var/webapp/
+    command: bash -c "pip install Flask==2.3.3 && pip install flask-cors && pip install Flask-MySQLdb && pip install Flask-SQLAlchemy && python /var/webapp/run.py && ls /var/webapp"
+  
